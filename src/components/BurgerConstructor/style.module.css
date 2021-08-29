@@ -1,0 +1,64 @@
+.root {
+  text-align: left;
+}
+
+.constructorBlock {
+  position: absolute;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.constructoContainer {
+  width: 536px;
+}
+
+.constructorWrapper {
+  display: flex;
+  margin: 0 auto;
+}
+
+.constructorTotal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.constructorTotal > svg {
+  width: 35px;
+  height: 35px;
+}
+/* 
+.ingredientsBlock {
+  position: absolute;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.ingredientElement {
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ingredientImg {
+  height: 125px;
+}
+.ingredientPrice {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.ingredientName {
+  line-height: 1.5em;
+  height: 3em;
+  text-overflow: ellipsis;
+} */

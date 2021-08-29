@@ -1,0 +1,16 @@
+.buttonInner {
+  display: flex;
+  flex-wrap:nowrap;
+  flex-direction: row;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.buttonIcon {
+  margin-right: 8px;
+  margin-bottom: -4px;
+}
+
+.buttonText {
+  text-align: 12px;
+}

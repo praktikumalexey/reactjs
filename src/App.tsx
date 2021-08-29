@@ -1,30 +1,41 @@
-import React from "react";
-import logo from "./logo.svg";
-import * as data from "./utils/data.json";
-import syles from "./styles/index.module.css";
-// import { Logo } from "@ya.praktikum/react-developer-burger-ui-components";
-
-console.log(data[0], syles);
+import React, { useState, useEffect } from "react";
+import AppHeader from "./components/AppHeader";
+import BurgerConstructor from "./components/BurgerConstructor";
+import BurgerIngredients from "./components/BurgerIngredients";
 
 function App(): React.ReactElement {
+  const [ingredients, setIngredients] = useState([]);
+
+  // fetch only once
+  useEffect(() => {
+    fetch("https://norma.nomoreparties.space/api/ingredients")
+      .then((response) => response.json())
+      .then(({ data }) => {
+        setIngredients(data);
+      })
+      .catch(console.error);
+  }, []);
+
   return (
-    <div className="App">
-      {/* <Logo /> */}
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p className={syles.redText}>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {ingredients.length > 0 && (
+        <div className="container">
+          <div className="box container-content">
+            <AppHeader />
+          </div>
+          <div className="box flex-1 container-content">
+            <div className="row">
+              <div className="col-50">
+                <BurgerIngredients ingredients={ingredients} />
+              </div>
+              <div className="col-50">
+                <BurgerConstructor ingredients={ingredients} />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

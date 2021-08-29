@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  flex-wrap:nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.left {
+  order: 1;
+  flex-basis: 33%;
+  text-align: right;
+}
+
+.middle {
+  order: 2;
+  flex-basis: 33%;
+  margin: auto;
+  text-align: center;
+}
+
+.right {
+  order: 3;
+  flex-basis: 33%;
+  text-align: right;
+}
+
+.buttonGroup > button {
+  margin-right: 8px;
+} 
+
+.buttonInner {
+  display: flex;
+  flex-wrap:nowrap;
+  flex-direction: row;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.buttonIcon {
+  margin-right: 8px;
+  margin-bottom: -4px;
+}
+

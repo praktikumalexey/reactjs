@@ -19,6 +19,7 @@
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@types/lodash": "^4.14.172",
     "@types/node": "^15.12.4",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
@@ -47,6 +48,7 @@
   "dependencies": {
     "@ya.praktikum/react-developer-burger-ui-components": "^1.5.0",
     "core-js": "^3.16.1",
+    "lodash": "^4.17.21",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }
