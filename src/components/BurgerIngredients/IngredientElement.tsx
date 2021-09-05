@@ -4,29 +4,30 @@ import {
   CurrencyIcon,
   Counter,
 } from "@ya.praktikum/react-developer-burger-ui-components";
+import { TIngredient } from "~/interfaces";
 
-export interface IBurgerIngredient {
-  img: string;
-  count?: number;
-  price: number;
-  name: string;
-}
+export const IngredientElement = (props: {
+  ingredient: TIngredient;
+  count: number;
+  openDetail: (ingredient: TIngredient) => void;
+}): React.ReactElement => {
+  const { ingredient, count = 0, openDetail } = props;
 
-export const IngredientElement = (props: IBurgerIngredient): React.ReactElement => {
-  const count = props.count || 0;
   return (
-    <div className="col-50">
+    <div className="col-50" onClick={() => openDetail(ingredient)}>
       <div className={`${style.ingredientElement} m-3 mt-6 mb-2`}>
         {count > 0 && <Counter count={count} size="default" />}
         <div className={style.ingredientImg}>
-          <img src={props.img} />
+          <img src={ingredient.image} />
         </div>
         <div className={`${style.ingredientPrice} mt-1 mb-2`}>
-          <span className="text text_type_digits-default mr-2">{props.price}</span>
+          <span className="text text_type_digits-default mr-2">
+            {ingredient.price}
+          </span>
           <CurrencyIcon type="primary" />
         </div>
         <div className={`${style.ingredientName} text text_type_main-default`}>
-          {props.name}
+          {ingredient.name}
         </div>
       </div>
     </div>

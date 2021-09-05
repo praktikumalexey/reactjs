@@ -30,6 +30,7 @@
   text-align: center;
   justify-content: center;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .ingredientImg {
@@ -46,4 +47,29 @@
   line-height: 1.5em;
   height: 3em;
   text-overflow: ellipsis;
+}
+
+.detailBlock {
+  width: 520px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.detailImage {
+  height: 240px;
+}
+
+.detailName {
+  text-align: center;
+}
+
+.detailInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.detailInfoValue {
+  flex: 1 1 25%;
+  text-align: center;
 }

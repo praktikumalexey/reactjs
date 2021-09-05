@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tabs } from "./Tabs";
 import { Ingredients } from "./Ingredients";
 import style from "./style.module.css";
 import { TIngredient, TGroupIngredietnts } from "~/interfaces";
 import get from "lodash/get";
+import { IngredientDetails } from "./IngredientDetails";
 
 const ingredientsGroup = (ingredients: Array<TIngredient>): TGroupIngredietnts => {
   return ingredients.reduce(
@@ -25,6 +26,10 @@ const ingredientsGroup = (ingredients: Array<TIngredient>): TGroupIngredietnts =
 export default function BurgerIngredients(props: {
   ingredients: Array<TIngredient>;
 }): React.ReactElement {
+  const [detailIngredients, setDetailIngredients] = useState<null | TIngredient>(
+    null
+  );
+
   const mapIngredient = ingredientsGroup(props.ingredients);
   const groupsName: Array<string> = Object.keys(mapIngredient);
 
@@ -41,8 +46,17 @@ export default function BurgerIngredients(props: {
     });
   };
 
+  const openDetail = (ingredient: TIngredient) => {
+    setDetailIngredients(ingredient);
+  };
+
+  const closeDetails = () => {
+    setDetailIngredients(null);
+  };
+
   return (
     <>
+      <IngredientDetails onClose={closeDetails} ingredient={detailIngredients} />
       <div className={`${style.root} container ml-5 mr-5`}>
         <div className="box">
           <p className="text text_type_main-large pt-10 pb-5">Соберите бургер</p>
@@ -54,6 +68,7 @@ export default function BurgerIngredients(props: {
             {groupsName.map((name) => (
               <div key={name} ref={refs[name]}>
                 <Ingredients
+                  openDetail={openDetail}
                   groupName={name}
                   ingredients={get(mapIngredient, name)}
                 />

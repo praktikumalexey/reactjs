@@ -6,6 +6,7 @@ import { tabDictionary } from "~/constants";
 import { IngredientElement } from "./IngredientElement";
 
 export const Ingredients = (props: {
+  openDetail: (ingredient: TIngredient) => void;
   groupName: string;
   ingredients: Array<TIngredient>;
 }): React.ReactElement => {
@@ -18,11 +19,10 @@ export const Ingredients = (props: {
       <div className="row pl-1 pr-1">
         {ingredients.map((ingredient) => (
           <IngredientElement
+            openDetail={props.openDetail}
             key={ingredient._id}
             count={0}
-            price={ingredient.price}
-            img={ingredient.image}
-            name={ingredient.name}
+            ingredient={ingredient}
           />
         ))}
       </div>
