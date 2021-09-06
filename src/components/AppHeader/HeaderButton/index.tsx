@@ -7,11 +7,15 @@ export default function HeaderButton(props: {
   children?: React.ReactNode;
 }): React.ReactElement {
   return (
-    <Button type="primary">
-      <div className={style.buttonInner}>
-        {props.children && <div className={style.buttonIcon}>{props.children}</div>}
-        {props.text && <div>{props.text}</div>}
-      </div>
-    </Button>
+    <a href="#" className="">
+      <Button type="primary">
+        <div className={style.buttonInner}>
+          {props.children && (
+            <div className={style.buttonIcon}>{props.children}</div>
+          )}
+          {props.text && <div>{props.text}</div>}
+        </div>
+      </Button>
+    </a>
   );
 }

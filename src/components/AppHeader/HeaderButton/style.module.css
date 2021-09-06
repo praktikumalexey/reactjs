@@ -1,3 +1,7 @@
+.buttonLink {
+  margin-right: 2px;
+}
+
 .buttonInner {
   display: flex;
   flex-wrap:nowrap;

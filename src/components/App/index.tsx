@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
-import AppHeader from "./components/AppHeader";
-import BurgerConstructor from "./components/BurgerConstructor";
-import BurgerIngredients from "./components/BurgerIngredients";
+import AppHeader from "~/components/AppHeader";
+import BurgerConstructor from "~/components/BurgerConstructor";
+import BurgerIngredients from "~/components/BurgerIngredients";
+import { getIngredients } from "~/api/ingredients";
+import { TIngredient } from "~/interfaces";
 
 function App(): React.ReactElement {
-  const [ingredients, setIngredients] = useState([]);
+  const [ingredients, setIngredients] = useState<Array<TIngredient>>([]);
 
   // fetch only once
   useEffect(() => {
-    fetch("https://norma.nomoreparties.space/api/ingredients")
-      .then((response) => response.json())
-      .then(({ data }) => {
-        setIngredients(data);
-      })
-      .catch(console.error);
+    getIngredients().then(({ data }) => {
+      setIngredients(data);
+    });
   }, []);
 
   return (
