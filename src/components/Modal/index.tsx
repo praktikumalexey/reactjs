@@ -1,5 +1,5 @@
 import React from "react";
-import { Portal } from "./Portal";
+import { ModalOverlay } from "./ModalOverlay";
 import style from "./style.module.css";
 import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 
@@ -44,7 +44,7 @@ const Modal = (props: {
   return (
     <>
       {isOpen && (
-        <Portal className={"modal"}>
+        <ModalOverlay className={"modal"}>
           <div ref={modalOverlay} className={style.modal}>
             <div className={`${style.modalContent} p-10 pt-10 pb-15`}>
               <div className={`${style.modalBody} pt-2 pb-2`}>
@@ -58,7 +58,7 @@ const Modal = (props: {
               {props.children}
             </div>
           </div>
-        </Portal>
+        </ModalOverlay>
       )}
     </>
   );
