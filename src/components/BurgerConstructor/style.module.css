@@ -20,6 +20,15 @@
   margin: 0 auto;
 }
 
+.constructoItem {
+  display: flex;
+  align-items: center;
+}
+
+.dragIcon{
+  width: 40px;
+}
+
 .constructorTotal {
   display: flex;
   align-items: center;

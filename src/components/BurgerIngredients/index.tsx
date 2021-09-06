@@ -6,7 +6,9 @@ import { TIngredient, TGroupIngredietnts } from "~/interfaces";
 import get from "lodash/get";
 import { IngredientDetails } from "./IngredientDetails";
 
-const getIngredientsGroup = (ingredients: Array<TIngredient>): TGroupIngredietnts => {
+const getIngredientsGroup = (
+  ingredients: Array<TIngredient>
+): TGroupIngredietnts => {
   return ingredients.reduce(
     (result: TGroupIngredietnts, ingredient: TIngredient) => {
       if (!Array.isArray(result[ingredient.type])) {
