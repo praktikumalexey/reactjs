@@ -6,7 +6,7 @@ import { TIngredient, TGroupIngredietnts } from "~/interfaces";
 import get from "lodash/get";
 import { IngredientDetails } from "./IngredientDetails";
 
-const ingredientsGroup = (ingredients: Array<TIngredient>): TGroupIngredietnts => {
+const getIngredientsGroup = (ingredients: Array<TIngredient>): TGroupIngredietnts => {
   return ingredients.reduce(
     (result: TGroupIngredietnts, ingredient: TIngredient) => {
       if (!Array.isArray(result[ingredient.type])) {
@@ -30,7 +30,7 @@ export default function BurgerIngredients(props: {
     null
   );
 
-  const mapIngredient = ingredientsGroup(props.ingredients);
+  const mapIngredient = getIngredientsGroup(props.ingredients);
   const groupsName: Array<string> = Object.keys(mapIngredient);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
