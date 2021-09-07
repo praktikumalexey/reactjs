@@ -5,7 +5,7 @@ const checkReponse = (res: Response) => {
     ? res.json()
     : res.json().then((err) => {
         alert("Ошибка ответа сервера, перезагрузите страницу");
-        Promise.reject(err);
+        return Promise.reject(err);
       });
 };
 
