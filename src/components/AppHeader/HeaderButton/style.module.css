@@ -1,0 +1,38 @@
+.buttonLink {
+  margin-right: 2px;
+}
+
+.button {
+  font-family: 'Jet Brains Mono';
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: normal;
+  padding: 16px 40px;
+  color: var(--text-primary-color);
+  background: linear-gradient(63.18deg, #801ab3 0%, #4c4cff 100%);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: var(--common-transition);
+  display: inline-block;
+  border-radius: 50%;
+  border-radius: var(--common-border-radius);
+  text-decoration: none;
+}
+
+.buttonInner {
+  display: flex;
+  flex-wrap:nowrap;
+  flex-direction: row;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.buttonIcon {
+  margin-right: 8px;
+  margin-bottom: -4px;
+}
+
+.buttonText {
+  text-align: 12px;
+}
